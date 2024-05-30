@@ -1,0 +1,96 @@
+{% extends "layout/base.html" %} {% comment %} Stop the error {% endcomment %}
+{% block title %} Create User {% endblock title %} {% block content %}
+<div>
+  <div class="col-md-4 mx-auto mt-2 py-2">
+    <h1 class="text-primary lead text-center">USER DETAILS</h1>
+    <form method="post">
+      {% comment %} {% csrf_token %} {% endcomment %}
+      <div class="mb-3">
+        <label for="first_name">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="first_name"
+          name="first_name"
+          value="{{user.first_name}}"
+          readonly
+        />
+      </div>
+      <div class="mb-3">
+        <label for="middle_name">Middle Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="middle_name"
+          name="middle_name"
+          value="{{user.middle_name}}"
+          readonly
+        />
+      </div>
+      <div class="mb-3">
+        <label for="last_name">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="last_name"
+          name="last_name"
+          value="{{user.last_name}}"
+          readonly
+        />
+      </div>
+      <div class="mb-3">
+        <label for="age">Age</label>
+        <input
+          type="text"
+          class="form-control"
+          id="age"
+          name="age"
+          value="{{user.age}}"
+          readonly
+        />
+      </div>
+      <div class="mb-3">
+        <label for="birth_date">Birth Date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="birth_date"
+          name="birth_date"
+          value="{{ user.birth_date }}"
+          readonly
+        />
+      </div>
+      <div class="mb-3">
+        <label for="gender">Gender</label>
+        <input
+          type="text"
+          class="form-control"
+          id="gender"
+          name="gender"
+          value="{{ user.gender }}"
+          readonly
+        />
+      </div>
+      <div class="mb-3">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          value="{{user.username}}"
+          readonly
+        />
+      </div>
+      <div class="d-flex justify-content-center w-100">
+        <a
+          href="/users"
+          class="btn btn-secondary float-end col-12 col-md-6 me-1"
+          >Back</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
